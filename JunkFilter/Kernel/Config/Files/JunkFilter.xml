@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<otrs_config version="1.0" init="Application">
+    <CVS>$Id: JunkFilter.xml,v 1.12 2008/03/10 12:57:42 mh Exp $</CVS>
+    <ConfigItem Name="PostMaster::PreFilterModule###010-Junk" Required="0" Valid="1">
+        <Description Translatable="1">Postmaster filter to move and close junk tickets.</Description>
+        <Group>JunkFilter</Group>
+        <SubGroup>Core::Postmaster</SubGroup>
+        <Setting>
+            <Hash>
+                <Item Key="Module">Kernel::System::PostMaster::Filter::Junk</Item>
+            </Hash>
+        </Setting>
+    </ConfigItem>
+    <ConfigItem Name="JunkFilter::Subject" Required="0" Valid="1">
+        <Description Translatable="1">Subjects to filter for.</Description>
+        <Group>JunkFilter</Group>
+        <SubGroup>Postmaster</SubGroup>
+        <Setting>
+            <Array>
+                <Item>Photo Editing</Item>
+                <Item>Greetings from</Item>
+                <Item>ARITHNEA</Item>
+                <Item>SEXARENA</Item>
+                <Item>Gluckwunsch</Item>
+                <Item>Firmanızı GOOGLE</Item>
+                <Item>112,50 EUR Guthabe</Item>
+                <Item>Hilfsanfrage</Item>
+                <Item>(Fortsetzung blockiert!)</Item>
+                <Item>Greetings</Item>
+                <Item>(Lukratives Gesch.*)</Item>
+                <Item>(Lohnkosten sparen in.*)</Item>
+                <Item>You are nominated for</Item>
+                <Item>an MBA do</Item>
+                <Item>Proposal From</Item>
+                <Item>Casino</Item>
+                <Item>ominated.*degree</Item>
+                <Item>Add.*resume</Item>
+                <Item>sexual</Item>
+                <Item>MBE - </Item>
+                <Item>Dearest One</Item>
+                <Item>University Diplomas</Item>
+                <Item>Firmenadressen - Rabatt</Item>
+                <Item>BLESSETH</Item>
+                <Item> Rolex </Item>
+                <Item>Haben Sie .* gewonnen</Item>
+                <Item>Frankfurt Book Fair</Item>
+                <Item>Hollywood</Item>
+                <Item>Please read</Item>
+                <Item>Call to Confirm</Item>
+                <Item>Ihre E-Mail gewonnen</Item>
+            </Array>
+        </Setting>
+    </ConfigItem>
+    <ConfigItem Name="JunkFilter::Body" Required="0" Valid="1">
+        <Description Translatable="1">Body parts to filter for.</Description>
+        <Group>JunkFilter</Group>
+        <SubGroup>Postmaster</SubGroup>
+        <Setting>
+            <Array>
+                <Item>Hong\s*Kong</Item>
+                <Item>asierteschnecken</Item>
+                <Item>bunnydome</Item>
+                <Item>schnecken</Item>
+                <Item>zuckergirls</Item>
+                <Item>Hang Seng</Item>
+                <Item>fotzenclub</Item>
+                <Item>sexarena</Item>
+                <Item>lottery</Item>
+                <Item>increase.*ranking</Item>
+                <Item>top of the search engines</Item>
+                <Item>Search Engine</Item>
+                <Item>China based</Item>
+                <Item>Standard Bank</Item>
+                <Item>Mm]edical\b|[Hh]ealth [Cc]are</Item>
+                <Item>Armbanduhr</Item>
+                <Item>MBA</Item>
+                <Item>http://blackjack-3000-bonus-bucks.ru/</Item>
+            </Array>
+        </Setting>
+    </ConfigItem>
+    <ConfigItem Name="JunkFilter::From" Required="0" Valid="1">
+        <Description Translatable="1">Sender to filter for.</Description>
+        <Group>JunkFilter</Group>
+        <SubGroup>Postmaster</SubGroup>
+        <Setting>
+            <Array>
+                <Item>newswork</Item>
+                <Item>livegirl</Item>
+                <Item>schneckenclub</Item>
+                <Item>wortpraes</Item>
+                <Item>hallowelt</Item>
+                <Item>metro24\.de</Item>
+                <Item>stoff4you</Item>
+                <Item>Loterij</Item>
+                <Item>nomination for M</Item>
+            </Array>
+        </Setting>
+    </ConfigItem>
+    <ConfigItem Name="JunkFilter::Queue" Required="0" Valid="1">
+        <Description Translatable="1">Queue to move the tickets to.</Description>
+        <Group>JunkFilter</Group>
+        <SubGroup>Postmaster</SubGroup>
+        <Setting>
+            <String Regex="">Junk</String>
+        </Setting>
+    </ConfigItem>
+    <ConfigItem Name="JunkFilter::State" Required="0" Valid="1">
+        <Description Translatable="1">State for junk tickets.</Description>
+        <Group>JunkFilter</Group>
+        <SubGroup>Postmaster</SubGroup>
+        <Setting>
+            <String Regex="">closed successful</String>
+        </Setting>
+    </ConfigItem>
+    <ConfigItem Name="JunkFilter::Action" Required="0" Valid="1">
+        <Description Translatable="1">Action done with junk tickets.</Description>
+        <Group>JunkFilter</Group>
+        <SubGroup>Postmaster</SubGroup>
+        <Setting>
+            <Option SelectedID="Move">
+                <Item Key="Move">Move to JunkFilter::Queue</Item>
+                <Item Key="Ignore">Ignore Mail</Item>
+            </Option>
+        </Setting>
+    </ConfigItem>
+</otrs_config>

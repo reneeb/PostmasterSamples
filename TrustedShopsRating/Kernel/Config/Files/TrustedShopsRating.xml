@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<otrs_config version="1.0" init="Config">
+    <ConfigItem Name="PostMaster::PostFilterModule###010-TrustedShopsRating" Required="0" Valid="1">
+        <Description Translatable="1">Move tickets from trusted shops with 5 star rating.</Description>
+        <Group>TrustedShops</Group>
+        <SubGroup>PostMasterFilter</SubGroup>
+        <Setting>
+            <Hash>
+                <Item Key="Module">Kernel::System::PostMaster::Filter::TrustedShopsRating</Item>
+            </Hash>
+        </Setting>
+    </ConfigItem>
+    <ConfigItem Name="Filter::TrustedShops::Queue" Required="0" Valid="1">
+        <Description Translatable="1">Queue where the tickets should be moved to.</Description>
+        <Group>TrustedShops</Group>
+        <SubGroup>PostMasterFilter::TrustedShopsRating</SubGroup>
+        <Setting>
+            <String Regex="">Bewertung::Trusted Shops</String>
+        </Setting>
+    </ConfigItem>
+    <ConfigItem Name="Filter::TrustedShops::State" Required="0" Valid="0">
+        <Description Translatable="1">State of the moved tickets.</Description>
+        <Group>TrustedShops</Group>
+        <SubGroup>PostMasterFilter::TrustedShopsRating</SubGroup>
+        <Setting>
+            <String Regex="">closed successful</String>
+        </Setting>
+    </ConfigItem>
+    <ConfigItem Name="Filter::TrustedShops::5Stars::Queue" Required="0" Valid="1">
+        <Description Translatable="1">Queue where the tickets rated with 5 stars should be moved to.</Description>
+        <Group>TrustedShops</Group>
+        <SubGroup>PostMasterFilter::TrustedShopsRating</SubGroup>
+        <Setting>
+            <String Regex="">Bewertung::TrustedShops</String>
+        </Setting>
+    </ConfigItem>
+    <ConfigItem Name="Filter::TrustedShops::5Stars::State" Required="0" Valid="1">
+        <Description Translatable="1">State of the moved tickets rated with 5 stars.</Description>
+        <Group>TrustedShops</Group>
+        <SubGroup>PostMasterFilter::TrustedShopsRating</SubGroup>
+        <Setting>
+            <String Regex="">closed successful</String>
+        </Setting>
+    </ConfigItem>
+    <ConfigItem Name="Filter::TrustedShops::XEnvelopeTo" Required="0" Valid="1">
+        <Description Translatable="1">X-Envelope-To in trusted shop mails.</Description>
+        <Group>TrustedShops</Group>
+        <SubGroup>PostMasterFilter::TrustedShopsRating</SubGroup>
+        <Setting>
+            <String Regex="">kundenmeinung\@massage-expert\.de</String>
+        </Setting>
+    </ConfigItem>
+    <ConfigItem Name="Filter::TrustedShops::XSender" Required="0" Valid="1">
+        <Description Translatable="1">Sender in trusted shop mails.</Description>
+        <Group>TrustedShops</Group>
+        <SubGroup>PostMasterFilter::TrustedShopsRating</SubGroup>
+        <Setting>
+            <String Regex="">rating-noreply@trustedshops.de</String>
+        </Setting>
+    </ConfigItem>
+    <ConfigItem Name="Filter::TrustedShops::Subjects" Required="0" Valid="1">
+        <Description Translatable="1">Subjects in trusted shop mails.</Description>
+        <Group>TrustedShops</Group>
+        <SubGroup>PostMasterFilter::TrustedShopsRating</SubGroup>
+        <Setting>
+            <Array>
+                <Item>Neue Bewertung f.*r massage-expert\.de</Item>
+                <Item>Bewertung zum Shop massage-expert\.de wurde ge.*ndert</Item>
+            </Array>
+        </Setting>
+    </ConfigItem>
+</otrs_config>

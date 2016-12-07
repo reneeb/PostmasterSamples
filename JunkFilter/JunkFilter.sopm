@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<otrs_package version="1.1">
+    <Name>JunkFilter</Name>
+    <Version>5.0.1</Version>
+    <Vendor>Perl-Services.de</Vendor>
+    <URL>http://perl-services.de/</URL>
+    <License>GNU AFFERO GENERAL PUBLIC LICENSE Version 3, November 2007</License>
+    <Description Lang="en">Close and move junk tickets.</Description>
+    <Description Lang="de">Schließen und verschieben von Junk Mails.</Description>
+    <Framework>4.0.x</Framework>
+    <Framework>5.0.x</Framework>
+    <Filelist>
+        <File Location="Kernel/Config/Files/JunkFilter.xml" Permission="644"/>
+        <File Location="Kernel/System/PostMaster/Filter/Junk.pm" Permission="644"/>
+    </Filelist>
+</otrs_package>
